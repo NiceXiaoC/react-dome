@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {
+	Component
+} from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
 import Headers from './components/header'
 import Table from './components/table'
@@ -11,31 +12,28 @@ import Froms from './components/form'
 import IndexChild from './components/indexChildren'
 import Topics from './components/topics/Topics'
 
-class App extends React.Component {
-  constructor(pros) {
-    super(pros)
-  }
-  render() {
-    return(
-      <Router>
+class App extends Component {
+	render() {
+		return(
+			<Router>
           <div>
             <Headers></Headers>
             <div>
-              <ul>
+              <ul className="navBar">
                 <li>
-                   <Link to="/index">index</Link>
+                   <NavLink to="/index" activeClassName="selected">index</NavLink>
                 </li>
                  <li>
-                  <Link to="/table">Table</Link>
+                  <NavLink to="/table" activeClassName="selected">Table</NavLink>
                 </li>
                  <li>
-                   <Link to="/form">form</Link>
+                   <NavLink to="/form" activeClassName="selected">form</NavLink>
                 </li>
                 <li>
-                   <Link to="/index/child">child</Link>
+                   <NavLink to="/child" activeClassName="selected">child</NavLink>
                 </li>
                 <li>
-                   <Link to="/index/mmm">child</Link>
+                   <NavLink to="/mmm" activeClassName="selected">child</NavLink>
                 </li>
               </ul>
             </div>
@@ -45,13 +43,13 @@ class App extends React.Component {
               <Route  exact path='/table' component={Table}/>
               <Route  exact path='/form' component={Froms}/>
               <Route  exact path='/index' component={Index}/>
-              <Route  exact path='/index/child' component={IndexChild}/>
-              <Route  exact path='/index/mmm' component={Topics}/>
+              <Route  exact path='/child' component={IndexChild}/>
+              <Route  exact path='/mmm' component={Topics}/>
             </div>
         </div>
       </Router>
-    )
-  }
+		)
+	}
 }
 
 export default App;
