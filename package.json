@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^16.4.0",
+    "react-css-modules": "^4.7.3",
     "react-dom": "^16.4.0",
     "react-mixin": "^2.0.2",
     "react-router": "^4.2.0",
