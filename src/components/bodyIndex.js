@@ -4,13 +4,12 @@ import PropTypes from 'prop-types' // 类型验证
 
 import ReactMixin from 'react-mixin'
 import MixinLog from './mixins'
-
-
+import styles from './css.css'
+console.log(styles, 99999)
 
 const defaultProps = {
 	xiaoC: '这是默认属性'
 }
-
 
 export default class BodyIndex extends React.Component {
 	constructor() {
@@ -34,7 +33,7 @@ export default class BodyIndex extends React.Component {
 	render() {
 		return(
 			<div>
-        <h1>主体内容</h1>
+        <h1 className={styles.app}>主体内容</h1>
         <p>{this.props.userid},{this.props.username}</p>
         <p>{this.props.xiaoC}</p>
         <input type="button" value="提交" onClick={this.changeUserInfo.bind(this,'ascascsad')}/>
@@ -50,3 +49,4 @@ BodyIndex.propTypes = {
 BodyIndex.defaultProps = defaultProps
 
 ReactMixin(BodyIndex.prototype, MixinLog)
+
